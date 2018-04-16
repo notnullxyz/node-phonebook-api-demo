@@ -1,0 +1,44 @@
+{
+  "name": "project4alpha",
+  "version": "1.0.0",
+  "description": "Assessment Project for A",
+  "main": "server.js",
+  "scripts": {
+    "serve": "node server.js",
+    "lint": "echo \"Error: no lint/checkstyle yet\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "project",
+    "api",
+    "assessment",
+    "nodejs",
+    "phonebook"
+  ],
+  "author": "Marlon B van der Linde",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "app": "^0.1.0",
+    "cli-table": "^0.3.1",
+    "custom-error-generator": "^7.0.0",
+    "dotenv": "^5.0.1",
+    "http-status": "^1.0.1",
+    "joi": "^13.1.2",
+    "lib": "^3.0.2",
+    "moment": "^2.21.1",
+    "node-restify-validation": "^1.1.1",
+    "os": "^0.1.1",
+    "redis": "^2.8.0",
+    "restify": "7.1.1",
+    "restify-errors": "^6.0.0",
+    "restify-joi-middleware": "^5.0.0",
+    "restify-router": "^0.5.0",
+    "restify-url-semver": "1.1.1",
+    "restify-validation-engine": "^1.0.3",
+    "shortid": "^2.2.8",
+    "winston": "^2.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
