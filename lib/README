@@ -1,0 +1,3 @@
+The files in this /lib/ dir is part of my legacy repos of old API boilerplate that works well.
+I did not write this for the assessment, but prefer using the service locator pattern, old habits die hard.
+Much of this code is antique and friends have tinkered and modified it over time, over beer!

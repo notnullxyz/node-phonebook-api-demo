@@ -1,0 +1,13 @@
+redis:
+    image: redis
+
+web_app:
+    build: .docker/
+    links: ["redis"]
+    env_file: ["./.env"]
+    ports: ["9229:9229", "8088:8088"]
+    command: ["node", "node_modules/nodemon/bin/nodemon.js", "--inspect=0.0.0.0:8088", "-w", "./lib", "-w", "./app", "server.js"]
+    volumes: [".:/src", ".docker/logs/:/var/log/applications/project4alpha"]
+    environment:
+        VIRTUAL_HOST: p4a.localhost
+        VIRTUAL_PORT: 9229
