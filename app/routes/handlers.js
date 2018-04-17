@@ -1,3 +1,5 @@
+'use strict';
+
 const httpStatusCodes = require('http-status');
 const errors = require('app/errors');
 
@@ -11,21 +13,21 @@ module.exports.setup = function setup(server, logger) {
     server.on('NotFound', (req, res) => {
         res.send(
             httpStatusCodes.NOT_FOUND,
-            new errors.RouteNotImplemented('Route Not Implemented'),
+            new errors.RouteNotImplemented('Route Not Implemented')
         );
     });
 
     server.on('VersionNotAllowed', (req, res) => {
         res.send(
             httpStatusCodes.NOT_FOUND,
-            new errors.InvalidVersion('Unsupported API version requested'),
+            new errors.InvalidVersion('Unsupported API version requested')
         );
     });
 
     server.on('InvalidVersion', (req, res) => {
         res.send(
             httpStatusCodes.NOT_FOUND,
-            new errors.InvalidVersion('Unsupported API version requested'),
+            new errors.InvalidVersion('Unsupported API version requested')
         );
     });
 
@@ -35,14 +37,14 @@ module.exports.setup = function setup(server, logger) {
 
         res.send(
             httpStatusCodes.INTERNAL_SERVER_ERROR,
-            new errors.InternalServerError('Internal Server Error'),
+            new errors.InternalServerError('Internal Server Error')
         );
     });
 
     server.on('MethodNotAllowed', (req, res) => {
         res.send(
             httpStatusCodes.METHOD_NOT_ALLOWED,
-            new errors.MethodNotAllowed('Method not Allowed'),
+            new errors.MethodNotAllowed('Method not Allowed')
         );
     });
 };

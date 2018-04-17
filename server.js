@@ -1,12 +1,11 @@
 'use strict';
 
-const restify = require('restify');
-const versioning = require('restify-url-semver');
-const validator = require('restify-joi-middleware');
-
-
 const config = require('./app/config/config');    // app configuration
 const routes = require('./app/routes/routes');    // app routes
+
+const versioning = require('restify-url-semver');
+const validator = require('restify-joi-middleware');
+const restify = require('restify');
 
 const routeTable = require('./lib/route-table');
 const handlers = require('./app/routes/handlers');
@@ -45,5 +44,6 @@ server.listen(config.webserver.port, () => {
         console.log('\nAPIs for this service:\n%s', routeTable(server.router.mounts, logger).toString());
     }
 });
+
 
 module.exports = server;

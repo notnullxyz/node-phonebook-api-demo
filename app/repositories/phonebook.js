@@ -1,12 +1,21 @@
 
 class PhonebookRepository {
-  constructor(logger) {
+  constructor(logger, cache) {
     this.logger = logger;
-    this.phonebook = null;
+    this.cache = cache;
   }
 
   findAll() {
-    // hit cache redis for find all... promise
+      return new Promise((resolve, reject) => {
+
+          this.cache.hgetall(options, function(err, reply) {
+              if (err) {
+                  reject(err);
+              } else {
+                  resolve(JSON.parse(body));
+              }
+          })
+      })
   }
 
   findById(id) {

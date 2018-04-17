@@ -5,7 +5,7 @@ const phonebookValidator = require('app/validations/phonebookValidator');
 
 
 module.exports.setup = function setup(server, serviceLocator) {
-  const phoneBookController = serviceLocator.get('phonebookController');
+  const phonebookController = serviceLocator.get('phonebookController');
   //const entryController = serviceLocator.get('entryController');
 
   // create a phonebook
@@ -17,7 +17,7 @@ module.exports.setup = function setup(server, serviceLocator) {
     validation: {
       params: phonebookValidator,
     },
-  }, (req, res, next) => phoneBookController.save(req, res, next));
+  }, (req, res, next) => phonebookController.save(req, res, next));
 
   // list all available phonebooks
   server.get({
@@ -25,7 +25,7 @@ module.exports.setup = function setup(server, serviceLocator) {
     name: 'list_phonebooks',
     version: '1.0.0',
     scope: 'phonebook/list',
-  }, (req, res, next) => phoneBookController.list(req, res, next));
+  }, (req, res, next) => phonebookController.list(req, res, next));
 
   // POST /entry            - save an entry to a specific phonebook
 

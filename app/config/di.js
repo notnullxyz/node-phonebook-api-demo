@@ -1,3 +1,5 @@
+'use strict';
+
 const config = require('app/config/config');
 const loggingFactory = require('lib/logging');
 const serviceLocator = require('lib/service_locator');
@@ -23,7 +25,7 @@ serviceLocator.register('cache', () => {
   return cache;
 });
 
-serviceLocator.register('phonebookController', () => {
+serviceLocator.register('phonebookController', (locator) => {
   const service = serviceLocator.get('phonebookService');
   const logger = serviceLocator.get('logger');
   return new PhonebookController(service, logger, config);
@@ -31,7 +33,7 @@ serviceLocator.register('phonebookController', () => {
 
 serviceLocator.register('phonebookRepository', (locator) => {
   const logger = locator.get('logger');
-  return new PhonebookRepository(logger);
+  return new PhonebookRepository(logger, locator.get('cache'));
 });
 
 serviceLocator.register('phonebookService', (locator) => {
