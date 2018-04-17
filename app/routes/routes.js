@@ -1,9 +1,12 @@
-const phonebookValidator = require('app/validations/phonebookValidator');
+'use strict';
+
 const entryValidator = require('app/validations/entryValidator');
+const phonebookValidator = require('app/validations/phonebookValidator');
+
 
 module.exports.setup = function setup(server, serviceLocator) {
-  const phoneBookController = serviceLocator.get('phoneBookController');
-  const entryController = serviceLocator.get('entryController');
+  const phoneBookController = serviceLocator.get('phonebookController');
+  //const entryController = serviceLocator.get('entryController');
 
   // create a phonebook
   server.post({

@@ -23,19 +23,19 @@ serviceLocator.register('cache', () => {
   return cache;
 });
 
-serviceLocator.register('PhonebookController', () => {
-  const service = serviceLocator.get('PhonebookService');
+serviceLocator.register('phonebookController', () => {
+  const service = serviceLocator.get('phonebookService');
   const logger = serviceLocator.get('logger');
-  return new PhonebookController(service, logger, config, cache);
+  return new PhonebookController(service, logger, config);
 });
 
-serviceLocator.register('PhonebookRepository', (locator) => {
+serviceLocator.register('phonebookRepository', (locator) => {
   const logger = locator.get('logger');
   return new PhonebookRepository(logger);
 });
 
-serviceLocator.register('PhonebookService', (locator) => {
-  const repo = locator.get('PhonebookRepository');
+serviceLocator.register('phonebookService', (locator) => {
+  const repo = locator.get('phonebookRepository');
   const logger = locator.get('logger');
   return new PhonebookService(repo, logger);
 });
