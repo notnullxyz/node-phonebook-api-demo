@@ -1,5 +1,6 @@
 redis:
     image: redis
+    ports: ["6379:6379"]
 
 web_app:
     build: .docker/

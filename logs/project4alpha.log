@@ -1,1 +1,0 @@
-{"context":"","event":{"name":"INFO"},"timestamp":"2018-04-17T01:09:55.312Z","message":"Server: project4alpha listening at http://[::]:9229","env":{"host":"7f2f224f218f"},"cid":"","app":{"name":"project4alpha","version":"dev"}}

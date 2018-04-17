@@ -28,7 +28,7 @@
     "moment": "^2.21.1",
     "node-restify-validation": "^1.1.1",
     "os": "^0.1.1",
-    "redis": "^2.8.0",
+    "redis": "2.8.0",
     "restify": "6.4.0",
     "restify-errors": "^6.0.0",
     "restify-joi-middleware": "^5.0.0",

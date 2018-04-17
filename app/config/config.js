@@ -1,6 +1,9 @@
 const appName = 'project4alpha';
 const config = {
   appName,
+  defaults: {
+    book: process.env.DEFAULT_BOOK || 'friends'
+  },
   webserver: {
     port: process.env.PORT || '8800',
   },
